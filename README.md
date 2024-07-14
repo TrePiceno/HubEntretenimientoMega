@@ -13,15 +13,17 @@ ___
 ___
 ### ¿Cómo instalar?
 1. instala Node JS en su versión actual [nodejs.org](https://nodejs.org/en "nodejs.org")
-2. Descarga el repositorio de GitHub
-3. Abre la carpeta en VSC
-4. Abre la terminal (se sugiere hacerlo dentro de VSC ya teniendo la carpeta abierta)
-5. Si es necesario haz cambio de directorio "cd entertainment-hub" (EntertainmentHub\entertainment-hub>)
-6. instala Angular CLI desde la terminal con el comando *npm install -g @angular/cli*
-7. Ejecuta el comando *ng serve*
-8. En el resultado de la terminal indica el puerto, puedes copiarlo y pegarlo en el navegador, puedes presionar ctrl y dar click en el enlace o puedes agregarlo manualmente en la barra de direcciones del navegador
-8. En el login agrega *user* y *password* respectivamente en los campos y presiona Entrar.
-9. ¡Listo! ya podrás navegar en el sitio.
+2. Entrar al repo [TrePiceno](https://github.com/TrePiceno "Repo de Jesus")
+3. Clonar copiar vinculo para clonarlo
+4. Crear una carpeta y abrirla en VSC
+5. Abrir terminar y ejecutar el comando con el vinculo *git clone https://github.com/TrePiceno/HubEntretenimientoMega.git*
+6. comando *cd entertainment-hub* 
+7. instala Angular CLI desde la terminal con el comando *npm install -g @angular/cli*
+8. Ejecuta el comando *ng serve*
+9. En el resultado de la terminal indica el puerto [localhost](http://localhost:4200/) , puedes copiarlo y pegarlo en el navegador, puedes presionar ctrl y dar click en el enlace o puedes agregarlo manualmente en la barra de direcciones del navegador
+10. En el login agrega *user* y *password* respectivamente en los campos y presiona Entrar
+11. ¡Listo! ya podrás navegar en el sitio.
+
 ---
 ### Capturas de pantalla
 ![login](./src/media-repo/login.png "login")
