@@ -8,6 +8,7 @@ ___
 - Node v20.13.1
 - npm v10.5.2
 - Angular CLI 18.1.0
+- TypeScript v5.5.3
 - Bootstrap v5
 
 ___
