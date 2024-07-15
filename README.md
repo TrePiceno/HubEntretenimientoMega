@@ -50,3 +50,22 @@ ___
 | ¿Qué salió bien? | ¿Qué puedo hacer diferente? | ¿Qué no salió bien? |
 |------------------|:---------------------------:|--------------------:|
 |Trabajar con Angular ha sido, toda una experiencia, he entenido como se estructura un sitio con este framework, las directivas, las rutas y la creación de componentes|Dedicar más tiempo a estudiar y practicar para entender mejor las cosas y pasar menos tiempo corrigiendo errores |No logre usar las imágenes de manera local, por más que revisaba la ruta, cambiaba de ubicación la carpeta, no aparecian, aunque con la extensión de *image preview* de VSC si. Tuve que usar links externos para poder mostrarlas. Tengo mucho por pulir aún. Por otro lado, llevo retraso con el tercer Sprint.|
+___
+## 3er Sprint
+### Resumen del proyecto
+Se implemento un hilo asincrónico para despues de acceder al sitio, que al cargar la primera vista muestre una animación mientras esta se carga. Así mismo con el uso de RxJS, con BehaviorSubject y Observable se creo una sección de películas recomendadas segun la interacción del usuario con las películas. En caso del testing, trabaje con Jasmine, intregado con el mismo Angular. 
+
+___
+### Requerimientos técnicos
+- RxJS
+- Karma y Jasmine
+
+### Capturas de pantalla
+![Testing](./src/media-repo/Testing.png "testing")
+___
+
+### Sprint Review
+| ¿Qué salió bien? | ¿Qué puedo hacer diferente? | ¿Qué no salió bien? |
+|------------------|:---------------------------:|--------------------:|
+|Conocer un poco la asincronía y su uso, en la práctica puede llevarme a crear sitios con una mejor experiencia de usuario. Tanto la implementación del hilo como el uso de RxJS, fue un avance.|Aprender más a fondo tanto Angular como entender mejor el testing|Apenas pude intentar hacer una prueba y no tengo claro que salió mal, pero evidentemente hay muchos errores.|
+
