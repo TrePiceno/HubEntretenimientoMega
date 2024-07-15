@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 // Definición de la interfaz con sus tipos de datos como platilla para el array de películas
-interface Movie {
+export interface Movie {
   id: number;
   title: string;
   genre: string;
@@ -16,6 +17,8 @@ interface Movie {
   providedIn: 'root'
 })
 export class MovieService {
+  private selectedMovieGenreSubject: BehaviorSubject<string | null> = new BehaviorSubject<string | null>(null);
+  public selectedMovieGenre$ = this.selectedMovieGenreSubject.asObservable();
   private movies: Movie[] = [
     { 
       id: 1, 
@@ -165,14 +168,18 @@ export class MovieService {
   ];
 
   // Funciones para administrar o filtrar el listado de las películas
-  constructor() { }
 
+  // Función para simular retraso en la carga de datos
+  getMoviesAsync(): Promise<Movie[]> {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(this.movies);
+      }, 500); 
+    });
+  }
+  
   getMovies(): Movie[] {
     return this.movies;
-  }
-
-  getRecommendedMovies(): Movie[] {
-    return this.movies.filter(movie => movie.favorite);
   }
 
   getMoviesByGenre(genre: string): Movie[] {
@@ -192,6 +199,10 @@ export class MovieService {
 
   getMovieById(id: number): Movie | undefined {
     return this.movies.find(movie => movie.id === id);
+  }
+
+  selectMovieGenre(genre: string) {
+    this.selectedMovieGenreSubject.next(genre);
   }
 }
 

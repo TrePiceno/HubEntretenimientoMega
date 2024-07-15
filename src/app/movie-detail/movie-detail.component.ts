@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MovieService } from '../movie.service';
+import { RecommendationService } from '../recommendation.service';
+
 
 
 interface Movie {
@@ -22,13 +24,26 @@ interface Movie {
 
 // Funciones para mostrar banner de las películas y reproducción del trailer. Uso de rutas y servicio de películas.
 export class MovieDetailComponent implements OnInit {
-  movie: Movie | undefined;
+  movie: Movie | any ;
 
   
-  constructor(private route: ActivatedRoute, private movieService: MovieService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private movieService: MovieService,
+    private recommendationService: RecommendationService,
+  ) {}
 
   ngOnInit(): void {
     this.getMovieDetails();
+    
+    const movieId = this.route.snapshot.paramMap.get('id');
+    if (movieId) {
+      this.movie = this.movieService.getMovieById(Number(movieId));
+      if (this.movie) {
+        this.movieService.selectMovieGenre(this.movie.genre);
+        this.recommendationService.updateRecommendationsByGenre(this.movie.genre);
+      }
+    }
   }
 
   getMovieDetails(): void {

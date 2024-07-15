@@ -25,7 +25,10 @@
   <main>
     <section class="movies-list">
       <h2>Películas Principales</h2>
-      <div class="movies">
+      <div *ngIf="isLoading" class="loading-container">
+        <div class="spinner"></div>
+      </div>
+      <div *ngIf="!isLoading" class="movies">
         <div class="movie card" *ngFor="let movie of movies" style="width: 18rem;">
           <img [src]="movie.poster" alt="{{movie.title}}" class="card-img-top">
           <div class="card-body">
@@ -39,15 +42,16 @@
         </div>
       </div>
     </section>
-  
-    <section class="recommended">
-      <h2>Recomendaciones</h2>
+
+    <section class="recommended-movies">
+      <h2>También te puede interesar</h2>
       <div class="movies">
         <div class="movie card" *ngFor="let movie of recommendedMovies" style="width: 18rem;">
           <div class="card-body">
-              <img [src]="movie.poster" alt="{{movie.title}}" class="card-img-top">
-              <h3 class="card-title">{{ movie.title }}</h3>
-              <a [routerLink]="['/movie', movie.id]" class="btn btn-primary">información</a>
+            <img [src]="movie.poster" alt="{{movie.title}}" class="card-img-top">
+            <h3 class="card-title">{{ movie.title }}</h3>
+            <p class="card-text">{{ movie.description }}</p>
+            <a [routerLink]="['/movie', movie.id]" class="btn btn-primary">información</a>
           </div>
         </div>
       </div>
